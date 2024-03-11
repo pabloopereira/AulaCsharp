@@ -9,11 +9,15 @@ namespace ConceitosBasicos
 {
     public class calculadoraimc
     {
-        public string Calcular(float peso, float altura)
+        public float Calcular(float peso, float altura)
         {
             float imc = peso / (altura * altura);
-            string status = string.Empty;
-            if (imc < 16)
+            return imc;
+        }
+        public string statusIMC(float imc)
+       {
+        string status = string.Empty;
+            if (imc< 16)
                 status = "magreza grave";
             else if (imc <= 16.9)
                 status = "magreza moderada";
@@ -29,7 +33,8 @@ namespace ConceitosBasicos
                 status = "obesidade grau 2";
             else
                 status = "obesidade grau 3 ou mórbida";
-            return $"O IMC calculado foi {imc} resultando no status{status}";
-        }
+            return $"O resultado do seu status foi:{status}";
+            }
+        
     }
 }

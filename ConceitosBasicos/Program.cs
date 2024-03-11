@@ -16,31 +16,11 @@ do
 
         float peso = float.Parse(Console.ReadLine());
 
-        calculadoraimc calculadoraimc = new calculadoraimc();
-
-        calculadoraimc.Calcular(peso, altura);
-
-        string resposta = calculadoraimc.Calcular(peso, altura);
-        Console.WriteLine(resposta);
+       var calculadoraimc = new calculadoraimc();
+        Console.WriteLine($"O seu IMC calculado foi:{calculadoraimc.Calcular(peso, altura)}");
+        Console.WriteLine(calculadoraimc.statusIMC(calculadoraimc.Calcular(peso, altura)));
 
         saida = false;
-       /* if (imc < 18.5)
-        {
-            Console.WriteLine("Peso abaixo do normal.");
-        }
-        else if (imc >= 18.5 && imc < 25)
-        {
-            Console.WriteLine("Peso normal.");
-        }
-        else if (imc >=25 && imc < 29.9)
-        {
-            Console.WriteLine("Levemente acima do peso");
-        }    
-        else
-        {
-            Console.WriteLine("Sobrepeso.");
-        }*/
-
     }
     catch (FormatException e)
     {
